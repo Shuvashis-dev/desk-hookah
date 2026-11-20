@@ -19,10 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-The MIT License above covers the Desk Hookah source code and artwork in this
-repository. The bubbling sound recordings in public/audio and the MediaPipe
-models and runtime are third-party works under their own licenses. See
-THIRD_PARTY_NOTICES.md.
