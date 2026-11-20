@@ -46,6 +46,7 @@
     "shortDescription": "A floating desktop hookah you pull with your hand",
     "longDescription": "Desk Hookah by Shuvashis Gautam: a tiny always-on-top desktop hookah with webcam hand tracking, thick WebGL smoke and real bubbling sound.",
     "publisher": "Shuvashis Gautam",
+    "homepage": "https://github.com/Shuvashis-dev/desk-hookah",
     "copyright": "Copyright (c) 2026 Shuvashis Gautam. MIT License.",
     "category": "Entertainment",
     "windows": {

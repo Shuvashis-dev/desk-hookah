@@ -3,8 +3,16 @@
   "private": true,
   "version": "0.1.0",
   "description": "A tiny floating desktop hookah you pull with your hand: webcam hand tracking, thick WebGL smoke and real bubbling sound.",
-  "author": "Shuvashis Gautam",
+  "author": "Shuvashis Gautam (https://github.com/Shuvashis-dev)",
   "license": "MIT",
+  "homepage": "https://github.com/Shuvashis-dev/desk-hookah#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shuvashis-dev/desk-hookah.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Shuvashis-dev/desk-hookah/issues"
+  },
   "keywords": [
     "tauri",
     "desktop-toy",
