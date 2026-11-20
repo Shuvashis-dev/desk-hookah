@@ -1,0 +1,9 @@
+# Normalize line endings for text files; keep binaries untouched.
+* text=auto
+
+*.mp3 binary
+*.png binary
+*.ico binary
+*.icns binary
+*.wasm binary
+*.task binary
