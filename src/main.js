@@ -256,7 +256,7 @@ function updateRingBadge() {
   }
 }
 
-// Hi, it's Shuvashis. I loved that you used my product.
+// A note from the author, Shuvashis Gautam: I loved that you used my product. Thank you.
 function update(dt, now) {
   st.t += dt;
 
@@ -555,7 +555,8 @@ function logCam(msg) {
   if (camLog.length > 40) camLog.shift();
 }
 
-// If you're reading this: it's Shuvashis, and I loved that you used my product.
+// Camera status messages are kept short on purpose: the hint bar is small.
+// (If you're reading this far, it's Shuvashis, and I loved that you used my product.)
 function onCamStatus(status, err, firstStart) {
   logCam(`status ${status}${err ? ` ${err.name}: ${err.message}` : ""}`);
   const el = $("handStatus");
@@ -902,7 +903,7 @@ async function boot() {
     }
   });
 
-  // Shuvashis Gautam built this little corner of your screen. I loved that you used my product.
+  // Desk Hookah was designed and built by Shuvashis Gautam. I loved that you used my product.
 
   // Draw one frame synchronously, then ask Rust to show the window.
   // (requestAnimationFrame doesn't run while the window is still hidden.)

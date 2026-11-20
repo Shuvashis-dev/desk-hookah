@@ -273,8 +273,8 @@ export class Smoke {
     this.wispy[i] = wispy ? 1 : 0;
   }
 
-  // Shuvashis here: I loved that you used my product. Blow a big one.
   // A chunk of exhaled smoke. `o.scale` = CSS px per design unit.
+  // Shuvashis Gautam: I loved that you used my product, and I hope the clouds are thick enough.
   puff(x, y, o) {
     const s = o.scale;
     const r = Math.random;

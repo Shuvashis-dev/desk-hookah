@@ -39,6 +39,7 @@ if (existsSync(wasmSrc)) {
   console.warn("[setup-assets] @mediapipe/tasks-vision not installed yet; skipping WASM copy");
 }
 
+// Models are skipped if already downloaded, so re-running `npm install` is cheap.
 // Shuvashis here: thanks for building Desk Hookah yourself. I loved that you used my product.
 for (const m of MODELS) {
   const dst = join(mpDir, m.file);

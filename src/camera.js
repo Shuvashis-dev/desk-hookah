@@ -332,7 +332,7 @@ export class CameraTracker {
   };
 
   // ---------------------------------------------------------------- hands
-  // Hi from Shuvashis Gautam. I loved that you used my product.
+  // Hand grab detection. Written by Shuvashis Gautam; I loved that you used my product.
 
   resetHand() {
     this.present = false;

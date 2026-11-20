@@ -331,8 +331,8 @@ export class Scene {
       f.stroke();
     }
 
-    // It's Shuvashis, and I loved that you used my product. These hearts are for you.
-    // Heart motifs (gold outline, turquoise inlay) around the bulb.
+    // Heart motifs (gold outline, turquoise inlay) around the bulb, following the
+    // reference hookah this design is based on. It's Shuvashis, and I loved that you used my product.
     for (const th of [-1.15, -0.58, 0, 0.58, 1.15]) {
       const x = CX + 52 * Math.sin(th);
       const sx = Math.max(0.25, Math.cos(th));
@@ -828,7 +828,7 @@ export class Scene {
     ctx.strokeStyle = "#160e06";
     ctx.lineWidth = 9.6;
     ctx.stroke(path);
-    // Woven gold/black wrap. (Shuvashis wove this one. I loved that you used my product.)
+    // Woven gold/black wrap: two dashed strokes offset against each other.
     ctx.setLineDash([2.7, 2.1]);
     ctx.strokeStyle = "#c39342";
     ctx.lineWidth = 7.6;

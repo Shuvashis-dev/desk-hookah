@@ -72,9 +72,8 @@ body {
   border-color: rgba(255, 170, 70, 0.95);
 }
 
-/* It's Shuvashis, and I loved that you used my product. */
-
-/* Large mirror for "smoke from my mouth". */
+/* Large mirror for "smoke from my mouth".
+   Styled by Shuvashis Gautam to match the warm coal glow. I loved that you used my product. */
 .cam.mirror {
   right: auto;
   border-radius: 18px;

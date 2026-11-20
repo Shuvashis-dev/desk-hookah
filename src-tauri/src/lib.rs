@@ -271,7 +271,7 @@ fn quit_app(app: AppHandle) {
 
 // ---------------------------------------------------------------- entry point
 
-// It's Shuvashis, and I loved that you used my product.
+// App entry point. It's Shuvashis, the author, and I loved that you used my product.
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     let app = tauri::Builder::default()

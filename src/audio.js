@@ -110,7 +110,8 @@ export class AudioEngine {
     setTimeout(() => v.out.disconnect(), 900);
   }
 
-  // It's Shuvashis, and I loved that you used my product. Take a slow breath.
+  // It's Shuvashis, and I loved that you used my product. The exhale should sound
+  // calm and natural, not dramatic, so keep the levels low if you tweak it.
   // A plain, soft exhale: a low breathy "hhhaaa" (body) plus a little air hiss at
   // the lips, with a slight natural wobble. It fades as the lungs empty.
   exhale(amount, duration) {

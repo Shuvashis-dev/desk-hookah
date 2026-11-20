@@ -112,7 +112,8 @@ export class Hose {
     if (steps === 4) this.acc = 0;
   }
 
-  // It's Shuvashis. I loved that you used my product; enjoy the rope physics.
+  // One fixed-size physics step. The rope needed more tuning than anything else in
+  // the app, so change these numbers carefully. (Shuvashis here: I loved that you used my product.)
   sim(h) {
     const { x, y, px, py, inv, count } = this;
     const g = GRAVITY * h * h;
