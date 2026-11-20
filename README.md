@@ -41,7 +41,7 @@ No tobacco, no real smoke. Just pixels and good sound.
 
 **Windows 10 and 11 (64-bit)**
 
-1. Download `Desk Hookah_0.1.0_x64-setup.exe` from the [latest release](https://github.com/Shuvashis-dev/desk-hookah/releases/latest) (about 14 MB).
+1. Download `Desk-Hookah-0.1.0-x64-setup.exe` from the [latest release](https://github.com/Shuvashis-dev/desk-hookah/releases/latest) (about 14 MB).
 2. Run it. It installs for your user account only, so no admin rights are needed.
 3. Desk Hookah appears in the bottom-right corner of your screen and in the system tray.
 
