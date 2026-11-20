@@ -1,0 +1,99 @@
+<!doctype html>
+<!--
+  Desk Hookah, created by Shuvashis Gautam. MIT License (see LICENSE).
+  It's Shuvashis, and I loved that you used my product.
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Desk Hookah</title>
+  </head>
+  <body>
+    <div id="stage">
+      <canvas id="scene"></canvas>
+      <div id="camWrap" class="cam">
+        <video id="cam" playsinline muted></video>
+        <div id="ringBadge" class="ring-badge">○ rings</div>
+      </div>
+      <canvas id="smokeLayer"></canvas>
+      <div id="hint" class="hint"></div>
+
+      <div id="toolbar" class="toolbar">
+        <button data-act="settings" title="Settings (right-click the hookah)">
+          <svg viewBox="0 0 24 24"><path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></svg>
+        </button>
+        <button data-act="hands" title="Hand tracking (camera)">
+          <svg viewBox="0 0 24 24"><path d="M18 11V6a2 2 0 0 0-4 0v1M14 10V4a2 2 0 0 0-4 0v6M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.9-6-2.4l-3.6-3.6a2 2 0 0 1 2.8-2.8L7 15"/></svg>
+        </button>
+        <button data-act="mouth" title="Smoke from my mouth (camera mirror)">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 15.5c1 .9 2.2 1.3 3.5 1.3s2.5-.4 3.5-1.3"/><path d="M9 9.5h.01M15 9.5h.01"/></svg>
+        </button>
+        <button data-act="mute" title="Mute / unmute">
+          <svg class="on" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>
+          <svg class="off" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="m22 9-6 6M16 9l6 6"/></svg>
+        </button>
+        <button data-act="hide" title="Hide to tray">
+          <svg viewBox="0 0 24 24"><path d="M5 12h14"/></svg>
+        </button>
+      </div>
+
+      <div id="panel" class="panel" hidden>
+        <header>
+          <span>Desk Hookah</span>
+          <button id="panelClose" class="close" title="Close">✕</button>
+        </header>
+
+        <section>
+          <h3>Smoke</h3>
+          <label class="slider">
+            <span>Amount <output id="smokeOut"></output></span>
+            <input type="range" id="smoke" min="0.3" max="2.5" step="0.05" />
+          </label>
+          <label class="slider">
+            <span>Thickness <output id="densityOut"></output></span>
+            <input type="range" id="density" min="0.4" max="2" step="0.05" />
+          </label>
+          <span class="label">Comes from</span>
+          <div class="choice">
+            <label><input type="radio" name="smokeFrom" value="pipe" /><span>Mouthpiece</span></label>
+            <label><input type="radio" name="smokeFrom" value="mouth" /><span>My mouth</span></label>
+          </div>
+          <label class="toggle" id="ringsRow"><input type="checkbox" id="rings" /><span>Smoke rings when I make an "O"</span></label>
+        </section>
+
+        <section>
+          <h3>Hand control</h3>
+          <label class="toggle"><input type="checkbox" id="hands" /><span>Use camera</span></label>
+          <div class="choice">
+            <label><input type="radio" name="grabGesture" value="fist" /><span>Fist ✊</span></label>
+            <label><input type="radio" name="grabGesture" value="pinch" /><span>Pinch 🤏</span></label>
+          </div>
+          <p class="note status" id="handStatus"></p>
+        </section>
+
+        <section>
+          <h3>Window &amp; sound</h3>
+          <label class="slider">
+            <span>Size <output id="sizeOut"></output></span>
+            <input type="range" id="size" min="0.7" max="1.6" step="0.05" />
+          </label>
+          <label class="slider">
+            <span>Volume <output id="volumeOut"></output></span>
+            <input type="range" id="volume" min="0" max="1" step="0.01" />
+          </label>
+          <label class="toggle"><input type="checkbox" id="onTop" /><span>Always on top</span></label>
+          <label class="toggle"><input type="checkbox" id="saver" /><span>Battery saver</span></label>
+        </section>
+
+        <div class="buttons">
+          <button id="btnCorner">Corner</button>
+          <button id="btnHide">Hide</button>
+          <button id="btnQuit" class="danger">Quit</button>
+        </div>
+        <p class="foot">Desk Hookah v0.1.0 · by Shuvashis Gautam</p>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
